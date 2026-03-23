@@ -851,6 +851,164 @@
       background: linear-gradient(to right, transparent, var(--accent-deep), transparent);
       margin: 0;
     }
+
+    /* ─── Theme Toggle Button ────────────────────────────────────────── */
+    .theme-toggle {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--border-mid);
+      background: transparent;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted);
+      transition: border-color .2s, color .2s, background .2s;
+      flex-shrink: 0;
+    }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    .theme-toggle svg { width: 17px; height: 17px; }
+    .icon-moon { display: block; }
+    .icon-sun  { display: none; }
+
+    /* ─── Light Mode ─────────────────────────────────────────────────── */
+    [data-theme="light"] {
+      --bg:          #f2f8f7;
+      --panel:       #ffffff;
+      --panel-2:     #e8f2f1;
+      --panel-3:     #dceeed;
+      --border:      rgba(15, 111, 102, 0.13);
+      --border-mid:  rgba(15, 111, 102, 0.25);
+      --text:        #0b1f1e;
+      --muted:       #4a6968;
+      --accent:      #0d9e8f;
+      --accent-deep: #0f6f66;
+      --accent-glow: rgba(13, 158, 143, 0.12);
+      --warning:     #a87800;
+    }
+    [data-theme="light"] body {
+      background: var(--bg);
+      color: var(--text);
+    }
+    /* Nav */
+    [data-theme="light"] nav {
+      background: rgba(242, 248, 247, 0.88);
+      border-bottom-color: var(--border);
+    }
+    [data-theme="light"] .nav-links a { color: #2a4a48; }
+    /* Hero bg overlay — lighter to let the photo breathe more */
+    [data-theme="light"] #hero {
+      background-image:
+        linear-gradient(to bottom, rgba(242,248,247,0.78) 0%, rgba(242,248,247,0.92) 65%, rgba(242,248,247,1) 100%),
+        url("https://images.unsplash.com/photo-1471341971476-ae15ff5dd4ea?auto=format&fit=crop&w=1800&q=80");
+    }
+    [data-theme="light"] h1.hero-title { color: var(--text); }
+    /* Dashboard preview card */
+    [data-theme="light"] .hero-dash,
+    [data-theme="light"] .dash-topbar,
+    [data-theme="light"] .dm-card,
+    [data-theme="light"] .dash-item,
+    [data-theme="light"] .dash-title-bar {
+      background: var(--panel);
+      border-color: var(--border);
+    }
+    [data-theme="light"] .dash-title-bar { background: var(--panel-2); }
+    [data-theme="light"] .dash-item-sub  { color: var(--muted); }
+    /* Problem section */
+    [data-theme="light"] #problem { background: var(--panel-2); }
+    [data-theme="light"] .problem-card { background: var(--panel); }
+    [data-theme="light"] .problem-card::before {
+      background: linear-gradient(135deg, rgba(168,120,0,.04) 0%, transparent 60%);
+    }
+    /* Steps */
+    [data-theme="light"] .steps-flow::before {
+      background: linear-gradient(to bottom, var(--accent-deep), transparent);
+    }
+    [data-theme="light"] .step-num {
+      background: var(--panel); border-color: var(--border-mid);
+    }
+    [data-theme="light"] .step-body { background: var(--panel); }
+    /* Auto cards */
+    [data-theme="light"] #automations { background: var(--panel-2); }
+    [data-theme="light"] .auto-card   { background: var(--panel); }
+    [data-theme="light"] .auto-card-head { border-bottom-color: var(--border); }
+    [data-theme="light"] .auto-outcome {
+      background: rgba(13,158,143,.06);
+    }
+    /* Implement */
+    [data-theme="light"] .impl-item  { background: var(--panel); }
+    [data-theme="light"] .impl-panel { background: var(--panel); box-shadow: 0 20px 60px rgba(0,0,0,.08); }
+    [data-theme="light"] .timeline-item { background: var(--panel-2); }
+    /* Dashboard */
+    [data-theme="light"] #dashboard  { background: var(--panel-2); }
+    [data-theme="light"] .kpi-card,
+    [data-theme="light"] .feed-card,
+    [data-theme="light"] .campaign-card { background: var(--panel); }
+    [data-theme="light"] .feed-item:hover { background: rgba(0,0,0,.02); }
+    [data-theme="light"] .campaign-item  { background: var(--panel-2); }
+    [data-theme="light"] .progress-wrap  { background: var(--border); }
+    [data-theme="light"] .bar { background: rgba(13,158,143,.22); }
+    [data-theme="light"] .bar.hi { background: var(--accent); }
+    /* Why */
+    [data-theme="light"] .stat-panel {
+      background: var(--panel);
+      box-shadow: 0 20px 60px rgba(0,0,0,.08);
+    }
+    [data-theme="light"] .stat-divider { background: var(--border); }
+    [data-theme="light"] .stat-num {
+      background: linear-gradient(135deg, var(--accent), #0d8a7c);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    /* Why outcomes */
+    [data-theme="light"] .why-icon-wrap {
+      background: rgba(13,158,143,.09);
+    }
+    /* CTA */
+    [data-theme="light"] #cta {
+      background-image:
+        linear-gradient(to bottom, rgba(242,248,247,0.88) 0%, rgba(242,248,247,0.80) 50%, rgba(242,248,247,0.90) 100%),
+        url("https://images.unsplash.com/photo-1617463874381-85b513b3e991?auto=format&fit=crop&w=1800&q=80");
+    }
+    [data-theme="light"] .cta-logo {
+      background: var(--panel);
+      box-shadow: 0 0 0 8px rgba(13,158,143,.06);
+    }
+    /* Footer */
+    [data-theme="light"] footer {
+      background: var(--panel-2);
+      border-top-color: var(--border);
+    }
+    [data-theme="light"] .footer-links a { color: #2a4a48; }
+    [data-theme="light"] .footer-copy    { color: var(--muted); }
+    /* Glow divider */
+    [data-theme="light"] .glow-divider {
+      background: linear-gradient(to right, transparent, rgba(13,158,143,.3), transparent);
+    }
+    /* Toggle icon swap */
+    [data-theme="light"] .icon-moon { display: none; }
+    [data-theme="light"] .icon-sun  { display: block; }
+    /* Image strip overlay */
+    [data-theme="light"] .img-strip-overlay {
+      background: linear-gradient(
+        to right,
+        rgba(242,248,247,0.95) 0%,
+        rgba(242,248,247,0.65) 40%,
+        rgba(242,248,247,0.25) 70%,
+        rgba(242,248,247,0.70) 100%
+      );
+    }
+    [data-theme="light"] .img-strip-content h2 { color: var(--text); }
+    /* Btn outline */
+    [data-theme="light"] .btn-outline {
+      border-color: var(--border-mid);
+      color: var(--text);
+    }
+    [data-theme="light"] .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    /* Cards/shadows */
+    [data-theme="light"] .hero-dash {
+      box-shadow: 0 24px 64px rgba(0,0,0,.10), 0 0 0 1px var(--border);
+    }
   </style>
 </head>
 <body>
@@ -868,7 +1026,13 @@
       <li><a href="#automations">Automations</a></li>
       <li><a href="#dashboard">Dashboard</a></li>
     </ul>
-    <a href="#cta" class="btn btn-primary">Book a Demo</a>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+        <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+        <svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <a href="#cta" class="btn btn-primary">Book a Demo</a>
+    </div>
   </div>
 </nav>
 
@@ -1693,5 +1857,23 @@
   </div>
 </footer>
 
+<script>
+  (function () {
+    var btn = document.getElementById('themeToggle');
+    var root = document.documentElement;
+    var saved = localStorage.getItem('ndylens-theme');
+
+    // Apply saved preference or system default on load
+    if (saved === 'light' || (!saved && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+      root.setAttribute('data-theme', 'light');
+    }
+
+    btn.addEventListener('click', function () {
+      var isLight = root.getAttribute('data-theme') === 'light';
+      root.setAttribute('data-theme', isLight ? 'dark' : 'light');
+      localStorage.setItem('ndylens-theme', isLight ? 'dark' : 'light');
+    });
+  })();
+</script>
 </body>
 </html>
